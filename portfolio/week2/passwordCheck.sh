@@ -17,6 +17,8 @@ echo -n $password | sha256sum -c --status /workspaces/portfolio/portfolio/week2/
 if [ "$?" = "0" ] 
     then
         echo "Access Granted"
+
+        /bin/bash ./menu.sh
     
         exit 0
     else
