@@ -6,19 +6,19 @@
 
 #password is "password"
 
-echo -e "enter the password" 
+echo "Enter the password" 
 
-read -rsp "" password
+# Disable echoing of input and read the password into a variable
+stty -echo
+read password
+stty echo
+echo ""
 
-echo -n $password | sha256sum -c --status /workspaces/portfolio/portfolio/week2/TestOne/secret.txt
-
-
+echo -n $password | sha256sum -c  --status /workspaces/portfolio/portfolio/week2/TestOne/secret.txt
 
 if [ "$?" = "0" ] 
     then
         echo "Access Granted"
-
-        /bin/bash ./menu.sh
     
         exit 0
     else

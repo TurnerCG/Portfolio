@@ -3,7 +3,7 @@
 
 
 # Ask the user to type a folder name
-read -rp " What should the folder name be? " folderName
+read -rp " Please input a name for the file storing the hashed password " folderName
 
 
 
