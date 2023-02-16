@@ -9,7 +9,6 @@
             "request": "launch",
             "name": "Bash-Debug (simplest configuration)",
             "program": "${file}",
-            "terminalKind": "external"
         }
     ]
 }

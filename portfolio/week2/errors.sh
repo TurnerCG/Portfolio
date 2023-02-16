@@ -1,9 +1,8 @@
+#!/bin/bash 
 
-     
-    
-       #!/bin/bash 
-      
-secret='shhh' #Don't tell anyone! 
+#Don't tell anyone!
+
+secret="shhh"
       
 #if the user types in the correct secret, tell them they got it right! 
       
@@ -13,7 +12,9 @@ if [ "$secret" = $REPLY ]; then
       
     correct=true 
       
-else     echo "You got it wrong :(" 
+else     
+
+    echo "You got it wrong :(" 
       
     correct=false 
       
