@@ -17,11 +17,11 @@ read choice
 case $choice in
   1)
     echo "Option 1: You chose to create a folder"
-    sh /workspaces/portfolio/portfolio/week2/folderCreator.sh
+    sh /workspaces/portfolio/portfolio/week2/folderMaker.sh
     ;;
   2)
     echo "Option 2: You chose to copy a folder"
-    sh /workspaces/portfolio/portfolio/foldercopier.sh
+    sh /workspaces/portfolio/portfolio/folderCopier.sh
     ;;
   3)
     echo "Option 3: You chose to set a password"
