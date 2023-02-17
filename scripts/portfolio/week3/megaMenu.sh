@@ -66,7 +66,7 @@ if [ $? -eq 0 ]; then
             ;;
           5)
             blue "Option 5: You chose to create week folders"
-            sh /workspaces/portfolio/scripts/portfolio/megafoldermaker.sh
+            sh /workspaces/portfolio/scripts/portfolio/week3/megafoldermaker.sh
             ;;
           6)
             blue "Option 6: You chose to check filenames"
@@ -78,7 +78,7 @@ if [ $? -eq 0 ]; then
             ;;
           7)
             blue "Option 7: You chose to download a file"
-            sh /workspaces/portfolio/scripts/portfolio/week3/webDownloader.sh
+            sh /workspaces/portfolio/scripts/portfolio/week3/downloader.sh
             ;;
           8)
             yellow "Goodbye!"
