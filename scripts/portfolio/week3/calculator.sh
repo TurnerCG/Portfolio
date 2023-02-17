@@ -23,22 +23,22 @@ read -p "Enter operation number: " op
 case $op in
   1)
     result=$((num1 + num2))
-    echo -e "${BLUE}Result: $result${NC}"
+    echo "${BLUE}Result: $result${NC}"
     ;;
   2)
     result=$((num1 - num2))
-    echo -e "${GREEN}Result: $result${NC}"
+    echo "${GREEN}Result: $result${NC}"
     ;;
   3)
     result=$((num1 * num2))
-    echo -e "${RED}Result: $result${NC}"
+    echo "${RED}Result: $result${NC}"
     ;;
   4)
     if [ $num2 -eq 0 ]; then
       echo "Cannot divide by zero!"
     else
       result=$((num1 / num2))
-      echo -e "${PURPLE}Result: $result${NC}"
+      echo "${PURPLE}Result: $result${NC}"
     fi
     ;;
   *)
