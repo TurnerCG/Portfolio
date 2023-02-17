@@ -14,7 +14,7 @@ read password
 stty echo
 echo ""
 
-echo -n $password | sha256sum -c  --status /workspaces/portfolio/portfolio/week2/TestOne/secret.txt
+echo -n $password | sha256sum -c  --status /workspaces/portfolio/scripts/portfolio/week2/TestOne/secret.txt
 
 if [ "$?" = "0" ] 
     then
