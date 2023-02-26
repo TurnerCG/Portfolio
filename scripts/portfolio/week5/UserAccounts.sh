@@ -15,9 +15,12 @@ printf "${BLUE}%-15s ${GREEN}| %-10s ${YELLOW}| %-10s ${PURPLE}| %-30s ${RED}| %
        "Username" "UserID" "GroupID" "Home" "Shell"
 printf "${BLUE}%s${NC}\n" "--------------------------------------------------------------------------------------------------------"
 
-# Read data from file and print table rows
+# Read data from file and print table rows with shell as /bin/bash
 while IFS=':' read -r username password uid gid gecos home shell; do
-    printf "${CYAN}%-17s ${WHITE}| %-10s ${WHITE}| %-10s ${WHITE}| %-30s ${WHITE}| %-10s${NC}\n" \
-           "$username" "$uid" "$gid" "$home" "$shell"
+    if [[ "$shell" =~ /bin/bash$ ]]; then
+        printf "${CYAN}%-17s ${WHITE}| %-10s ${WHITE}| %-10s ${WHITE}| %-30s ${WHITE}| %-10s${NC}\n" \
+               "$username" "$uid" "$gid" "$home" "$shell"
+    fi
 done < /etc/passwd
+
 printf "${BLUE}%s${NC}\n" "--------------------------------------------------------------------------------------------------------"
