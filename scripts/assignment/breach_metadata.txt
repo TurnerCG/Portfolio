@@ -1,0 +1,100 @@
+
+Title: Convex - 150,129 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Convex
+Date: Sun, 26 Feb 2023 06:51:44 Z
+Description: In February 2023, the Russian telecommunications provider &lt;a href="https://www.hackread.com/anonymous-data-leak-russia-isp-convex/" target="_blank" rel="noopener"&gt;Convex was hacked by &amp;quot;Anonymous&amp;quot; who subsequently released 128GB of data publicly&lt;/a&gt;, alleging it revealed illegal government surveillance. The leaked data contained 150k unique email, IP and physical addresses, names and phone numbers.
+
+Title: RealDudesInc - 101,543 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#RealDudesInc
+Date: Sun, 19 Feb 2023 04:52:21 Z
+Description: In October 2022, the GTA mod menu provider &lt;a href="https://twitter.com/FalconFeedsio/status/1584795069260869632" target="_blank" rel="noopener"&gt;RealDudesInc suffered a data breach&lt;/a&gt; that exposed over 100k email addresses (many of which are temporary guest account addresses). The breach also included usernames and bcrypt password hashes.
+
+Title: Weee - 1,117,405 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Weee
+Date: Wed, 08 Feb 2023 23:17:51 Z
+Description: In February 2023, &lt;a href="https://www.bleepingcomputer.com/news/security/weee-grocery-service-confirms-data-breach-11-million-affected/" target="_blank" rel="noopener"&gt;data belonging to the Asian and Hispanic food delivery service Weee appeared on a popular hacking forum&lt;/a&gt;. Dating back to mid-2022, the data included 1.1M unique email addresses from 11M rows of orders containing names, phone numbers and delivery instructions.
+
+Title: LimeVPN - 23,348 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#LimeVPN
+Date: Mon, 06 Feb 2023 21:42:01 Z
+Description: In October 2020, the VPN provider &lt;a href="https://threatpost.com/hacked-data-limevpn-dark-web/167492/" target="_blank" rel="noopener"&gt;LimeVPN suffered a data breach that exposed the personal information of tens of thousands of customers&lt;/a&gt;. The data included email, IP and physical addresses, names, phone numbers, purchase histories and passwords stored as salted MD5 hashes.
+
+Title: Truth Finder - 8,159,573 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#TruthFinder
+Date: Sat, 04 Feb 2023 07:02:52 Z
+Description: In 2019, the public records search service &lt;a href="https://www.truthfinder.com/security-incident-alert/" target="_blank" rel="noopener"&gt;TruthFinder suffered a data breach that later came to light in early 2023&lt;/a&gt;. The data included over 8M unique customer email addresses, names, phone numbers and passwords stored as scrypt hashes.
+
+Title: Instant Checkmate - 11,943,887 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#InstantCheckmate
+Date: Sat, 04 Feb 2023 00:26:28 Z
+Description: In 2019, the public records search service &lt;a href="https://www.instantcheckmate.com/security-incident-alert/" target="_blank" rel="noopener"&gt;Instant Checkmate suffered a data breach that later came to light in early 2023&lt;/a&gt;. The data included almost 12M unique customer email addresses, names, phone numbers and passwords stored as scrypt hashes.
+
+Title: School District 42 - 18,850 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#SchoolDistrict42
+Date: Thu, 02 Feb 2023 05:27:50 Z
+Description: In January 2023, &lt;a href="https://www.mapleridgenews.com/news/maple-ridge-pitt-meadows-school-district-suffers-massive-data-breach/" target="_blank" rel="noopener"&gt;Pitt Meadows School District 42 in British Columbia suffered a data breach&lt;/a&gt;. The incident exposed the names and email addresses of approximately 19k students and staff which were consequently redistributed on a popular hacking forum.
+
+Title: Planet Ice - 240,488 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#PlanetIce
+Date: Tue, 31 Jan 2023 02:00:53 Z
+Description: In January 2023, the UK-based ice skating rink booking service &lt;a href="https://www.bristolpost.co.uk/news/bristol-news/bristol-planet-ice-cyber-attack-8076491" target="_blank" rel="noopener"&gt;Planet Ice suffered a data breach&lt;/a&gt;. The incident exposed the personal data of 240k people including email and physical addresses, phone numbers, genders, dates of birth and passwords stored as MD5 hashes. The data also included the names, genders and dates of birth of children having parties.
+
+Title: KomplettFritid - 139,401 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#KomplettFritid
+Date: Mon, 23 Jan 2023 22:24:47 Z
+Description: In January 2023, &lt;a href="https://www.digi.no/artikler/selger-datalekkasje-med-140-000-berorte-kunder-fra-lars-monsens-nettbutikk/525070" target="_blank" rel="noopener"&gt;the online Norwegian store KomplettFritid was reported as having had a data breach dating back to February 2021&lt;/a&gt;. The incident exposed 140k customer records including physical, email and IP addresses, names, phone numbers and passwords. Most passwords were stored as bcrypt hashes with a small number appearing in plain text.
+
+Title: Autotrader - 20,032 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Autotrader
+Date: Mon, 23 Jan 2023 06:24:21 Z
+Description: In January 2023, &lt;a href="https://thecyberexpress.com/data1-4-million-autotrader-user-exposed/" target="_blank" rel="noopener"&gt;1.4M records from the Autotrader online vehicle marketplace appeared on a popular hacking forum&lt;/a&gt;. Autotrader stated that the &amp;quot;data in question relates to aged listing data that was generally publicly available on our site at the time and open to automated collection methods&amp;quot;. The data contained 20k unique email addresses alongside physical addresses and phone numbers of dealers and vehicle details including VIN numbers. The data was provided to HIBP by a source who requested it be attributed to &amp;quot;IntelBroker&amp;quot;.
+
+Title: Zurich - 756,737 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Zurich
+Date: Sun, 22 Jan 2023 22:30:56 Z
+Description: In January 2023, &lt;a href="https://therecord.media/millions-of-aflac-zurich-insurance-customers-in-japan-have-data-leaked-after-breach/" target="_blank" rel="noopener"&gt;the Japanese arm of Zurich insurance suffered a data breach that exposed 2.6M customer records with over 756k unique email addresses&lt;/a&gt;. The data was subsequently posted to a popular hacking forum and also included names, genders, dates of birth and details of insured vehicles. The data was provided to HIBP by a source who requested it be attributed to &amp;quot;IntelBroker&amp;quot;.
+
+Title: DoorDash - 367,476 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#DoorDash
+Date: Sat, 07 Jan 2023 03:59:32 Z
+Description: In August 2022, the food ordering and delivery service &lt;a href="https://mashable.com/article/doordash-hack-customer-details-exposed" target="_blank" rel="noopener"&gt;DoorDash disclosed a data breach that impacted a portion of their customers&lt;/a&gt;. DoorDash attributed the breach to an unnamed &amp;quot;third-party vendor&amp;quot; they stated was the victim of a phishing campaign. The incident exposed 367k unique personal email addresses alongside names, post codes and partial card data, namely the brand, expiry data and last four digits of the card.
+
+Title: SlideTeam - 1,464,271 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#SlideTeam
+Date: Sat, 07 Jan 2023 01:05:24 Z
+Description: In April 2021, the &amp;quot;world’s largest collection of pre-designed presentation slides&amp;quot; &lt;a href="https://news.kaduu.ch/2022/08/25/worlds-largest-supplier-of-powerpoint-content-hacked/" target="_blank" rel="noopener"&gt;SlideTeam had 1.4M records breached and later published to a popular hacking forum the following year&lt;/a&gt;. Allegedly sourced from a compromised Magento instance, the data included names, email addresses and passwords stored as salted hashes.
+
+Title: Twitter (200M) - 211,524,284 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Twitter200M
+Date: Thu, 05 Jan 2023 20:49:16 Z
+Description: In early 2023, &lt;a href="https://www.bleepingcomputer.com/news/security/200-million-twitter-users-email-addresses-allegedly-leaked-online/" target="_blank" rel="noopener"&gt;over 200M records scraped from Twitter appeared on a popular hacking forum&lt;/a&gt;. The data was obtained sometime in 2021 by abusing an API that enabled email addresses to be resolved to Twitter profiles. The subsequent results were then composed into a corpus of data containing email addresses alongside public Twitter profile information including names, usernames and follower counts.
+
+Title: Deezer - 229,037,936 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Deezer
+Date: Mon, 02 Jan 2023 03:10:50 Z
+Description: In late 2022, the music streaming service &lt;a href="https://restoreprivacy.com/music-service-deezer-data-breach/" target="_blank" rel="noopener"&gt;Deezer disclosed a data breach that impacted over 240M customers&lt;/a&gt;. The breach dated back to a mid-2019 backup exposed by a 3rd party partner which was subsequently sold and then broadly redistributed on a popular hacking forum. Impacted data included 229M unique email addresses, IP addresses, names, usernames, genders, DoBs and the geographic location of the customer.
+
+Title: Benchmark - 93,343 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Benchmark
+Date: Sun, 01 Jan 2023 01:50:43 Z
+Description: In November 2019, the Serbian technology news website &lt;a href="https://forum.benchmark.rs/threads/benchmark-forum-kompromitovan.489760/" target="_blank" rel="noopener"&gt;Benchmark suffered a breach of its forum&lt;/a&gt; that exposed 93k customer records. The breach exposed IP and email addresses, usernames and passwords stored as salted MD5 hashes. &lt;a href="https://forum.benchmark.rs/threads/benchmark-forum-kompromitovan.489760/#post-6758095" target="_blank" rel="noopener"&gt;A forum administrator subsequently advised that the breach was due to the forum previously running on an outdated vBulletin instance&lt;/a&gt;. The data was provided to HIBP by a source who requested it be attributed to &amp;quot;ZAN @ BF&amp;quot;.
+
+Title: Gemini - 5,274,214 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Gemini
+Date: Fri, 16 Dec 2022 16:47:43 Z
+Description: In late 2022, &lt;a href="https://www.bleepingcomputer.com/news/security/hackers-leak-personal-info-allegedly-stolen-from-57m-gemini-users/" target="_blank" rel="noopener"&gt;data allegedly taken from the Gemini crypto exchange was posted to a public hacking forum&lt;/a&gt;. The data consisted of email addresses and partial phone numbers, which Gemini later attributed to &lt;a href="https://www.gemini.com/blog/protecting-our-customers-from-phishing-campaigns" target="_blank" rel="noopener"&gt;an incident at a third-party vendor&lt;/a&gt; (the vendor was not named). The data was provided to HIBP by a source who requested it be attributed to &amp;quot;ZAN @ BF&amp;quot;.
+
+Title: CoinTracker - 1,557,153 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#CoinTracker
+Date: Mon, 12 Dec 2022 08:55:48 Z
+Description: In December 2022, the Crypto &amp; NFT taxes service &lt;a href="https://www.databreaches.net/important-cointracker-security-update/" target="_blank" rel="noopener"&gt;CoinTracker reported a data breach that impacted over 1.5M of their customers&lt;/a&gt;. The company &lt;a href="https://www.cointracker.io/blog/sendgrid-data-breach" target="_blank" rel="noopener"&gt;later attributed the breach to a compromise SendGrid&lt;/a&gt; in an attack that targeted multiple customers of the email provider. The breach exposed email addresses and partially redacted phone numbers, with CoinTracker advising that the later did not originate from their service.
+
+Title: Abandonia (2022) - 919,790 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#Abandonia2022
+Date: Wed, 07 Dec 2022 06:04:17 Z
+Description: In November 2022, the gaming website dedicated to classic DOS games &lt;a href="https://twitter.com/FalconFeedsio/status/1594670215471792130" target="_blank" rel="noopener"&gt;Abandonia&lt;/a&gt; suffered a data breach resulting in the exposure of 920k unique user records. This breach was in addition to another one 7 years earlier in 2015. The data contained email and IP addresses, usernames and salted MD5 hashes of passwords.
+
+Title: Not Acxiom (unverified) - 51,730,831 breached accounts
+Link: https://haveibeenpwned.com/PwnedWebsites#NotAcxiom
+Date: Tue, 22 Nov 2022 19:17:40 Z
+Description: In 2020, &lt;a href="https://www.troyhunt.com/data-breach-misattribution-acxiom-live-ramp/" target="_blank" rel="noopener"&gt;a corpus of data containing almost a quarter of a billion records spanning over 400 different fields was misattributed to database marketing company Acxiom&lt;/a&gt; and subsequently circulated within the hacking community. On review, Acxiom concluded that &amp;quot;the claims are indeed false and that the data, which has been readily available across multiple environments, does not come from Acxiom and is in no way the subject of an Acxiom breach&amp;quot;. The data contained almost 52M unique email addresses.
