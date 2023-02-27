@@ -3,7 +3,7 @@
 # Author: Christopher Turner
 # Creation Date: 02/2023
 # Last Modified Data: 02/23
-# Script Description: Extracts metadata from haveibeenpwned.com/PwnedWebsites and ranks the "Pwned" websites.
+# Script Description: Extracts latest breaches from HaveIBeenPwned
 
 ###################################################################
 
@@ -20,14 +20,7 @@ WHITE='\033[1;37m'
 NC='\033[0m'
 
 # Define the URL to extract data from
-URL="https://haveibeenpwned.com/PwnedWebsites"
-
-# Define the regular expressions to extract data from the HTML
-ID_REGEX='id="[A-Za-z0-9_\-]+'
-BREACH_DATE_REGEX='<strong>Breach date:</strong> ([0-9]+ [A-Za-z]+ [0-9]{4})<br />'
-DATE_ADDED_REGEX='<strong>Date added to HIBP:</strong> (.*?)<br />'
-COMPROMISED_ACCOUNTS_REGEX='<strong>Compromised accounts:</strong> ([0-9,]+)<br />'
-COMPROMISED_DATA_REGEX='<strong>Compromised data:</strong> (.*?)<br />'
+URL="http://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches"
 
 # Define the directory to download the data to
 DOWNLOAD_DIR="/workspaces/portfolio/scripts/assignment"
@@ -36,53 +29,57 @@ DOWNLOAD_DIR="/workspaces/portfolio/scripts/assignment"
 mkdir -p "$DOWNLOAD_DIR"
 
 # Create the metadata file if it doesn't exist
-touch "$DOWNLOAD_DIR/metadata.txt"
+touch "$DOWNLOAD_DIR/breach_metadata.txt"
 
 # Check that the metadata file was created
-if [ ! -f "$DOWNLOAD_DIR/metadata.txt" ]; then
+if [ ! -f "$DOWNLOAD_DIR/breach_metadata.txt" ]; then
   echo "${RED}Error creating the metadata file.${NC}" >&2
   exit 1
 fi
 
-# Download the HTML page
-if ! curl -s "$URL" > "$DOWNLOAD_DIR/PwnedWebsites.html"; then
-  echo "HTML page downloaded to $DOWNLOAD_DIR/PwnedWebsites.html"
-  echo "${RED}Error downloading the HTML file.${NC}" >&2
+# Download the feed
+if ! curl -s "$URL" > "$DOWNLOAD_DIR/pwned_feed.xml"; then
+  echo "Feed downloaded to $DOWNLOAD_DIR/pwned_feed.xml"
+  echo "${RED}Error downloading the feed.${NC}" >&2
   exit 1
 fi
 
-# Extract the IDs from the downloaded file
-if ! grep -oP "$ID_REGEX" "$DOWNLOAD_DIR/PwnedWebsites.html" > "$DOWNLOAD_DIR/ids.txt"; then
-  echo "${RED}Error extracting the IDs.${NC}" >&2
-  exit 1
-fi
-
-# Extract the metadata for each ID and save it to a file
-while read -r id; do
-  metadata=$(grep -oP "(?s)$id.*?</ul>" "$DOWNLOAD_DIR/PwnedWebsites.html" | sed 's/<[^>]*>//g')
-  if [ -n "$metadata" ]; then
-    breach_date=$(echo "$metadata" | grep -oP "$BREACH_DATE_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-    date_added=$(echo "$metadata" | grep -oP "$DATE_ADDED_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-    compromised_data=$(echo "$metadata" | grep -oP "$COMPROMISED_DATA_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-
-      printf "%s\nBreach date: %s\nDate added to HIBP: %s\nCompromised accounts: %s\nCompromised data: %s\n\n" "$id" "$breach_date" "$date_added" "$compromised_data" "$compromised_data" >> "$DOWNLOAD_DIR/metadata.txt"
-  fi
-done < "$DOWNLOAD_DIR/ids.txt"
+# Use xmllint to extract the metadata and save it to a file
+xmllint --xpath '//item' "$DOWNLOAD_DIR/pwned_feed.xml" | while read -r line; do
+  title=$(echo "$line" | xmllint --xpath 'string(./title/text())')
+  link=$(echo "$line" | xmllint --xpath 'string(./link/text())')
+  pubDate=$(echo "$line" | xmllint --xpath 'string(./pubDate/text())')
+  description=$(echo "$line" | xmllint --xpath 'string(./description/text())')
+  printf "Title: %s\nLink: %s\nDate: %s\nDescription: %s\n\n" "$title" "$link" "$pubDate" "$description" >> "$DOWNLOAD_DIR/breach_metadata.txt"
+done
 
 # Check if metadata was successfully saved to file
-if [ ! -s "$DOWNLOAD_DIR/metadata.txt" ]; then
+if [ ! -s "$DOWNLOAD_DIR/breach_metadata.txt" ]; then
   echo "${RED}Error: No metadata was saved to file.${NC}" >&2
   exit 1
 fi
 
-# Rank the Pwned websites by number of compromised accounts
-echo -e "${GREEN}Ranking the Pwned websites by number of compromised accounts:${NC}"
-sort -t $'\t' -k 2nr "$DOWNLOAD_DIR/metadata.txt" | awk 'BEGIN { FS="\n" ; RS="" } { print $1 "\n" $2 "\n\n" }' > "$DOWNLOAD_DIR/rankings.txt"
+# Format the metadata into a table
+echo -e "${GREEN}Latest breaches:${NC}"
+awk '{ printf("| %-80s | %-30s | %-100s |\n", $1, $2, $4); }' "$DOWNLOAD_DIR/breach_metadata.txt" > "$DOWNLOAD_DIR/breach_table.txt"
 
-# Check if the rankings file was created
-if [ ! -f "$DOWNLOAD_DIR/rankings.txt" ]; then
-  echo "${RED}Error creating the rankings file.${NC}" >&2
+# Check if the table file was created
+if [ ! -f "$DOWNLOAD_DIR/breach_table.txt" ]; then
+  echo "${RED}Error creating the table file.${NC}" >&2
   exit 1
 fi
 
-echo -e "${GREEN}Rankings saved to ${DOWNLOAD_DIR}/rankings.txt.${NC}"
+# Check if the metadata file exists, and if so, delete it
+if [ -f "$DOWNLOAD_DIR/breach_metadata.txt" ]; then
+  rm "$DOWNLOAD_DIR/breach_metadata.txt"
+fi
+
+echo -e "${GREEN}Success!${NC}"
+
+# Print the table
+echo -e "${GREEN}Latest Breaches:${NC}"
+cat "$DOWNLOAD_DIR/breach_table.txt" | column -t -s $'\t'
+
+# Clean up temporary files
+rm "$DOWNLOAD_DIR/breach_data.xml" "$DOWNLOAD_DIR/breach_table.txt"
+
