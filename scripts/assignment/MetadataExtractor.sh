@@ -23,7 +23,7 @@ NC='\033[0m'
 URL="https://haveibeenpwned.com/PwnedWebsites"
 
 # Define the regular expressions to extract data from the HTML
-ID_REGEX='id="(\d\w+)"'
+ID_REGEX='id="[A-Za-z0-9_\-]+'
 BREACH_DATE_REGEX='<strong>Breach date:</strong> (.*?)<br />'
 DATE_ADDED_REGEX='<strong>Date added to HIBP:</strong> (.*?)<br />'
 COMPROMISED_ACCOUNTS_REGEX='<strong>Compromised accounts:</strong> (.*?)<br />'
@@ -41,16 +41,23 @@ if ! curl -s "$URL" > "$DOWNLOAD_DIR/PwnedWebsites.html"; then
   exit 1
 fi
 
-# Extract the IDs from the downloaded file and print out information
-printf "${BLUE}%-20s | %-15s | %-25s | %-25s | %-50s${NC}\n" "ID" "Breach Date" "Date Added to HIBP" "Compromised Accounts" "Compromised Data"
-printf "${BLUE}%s${NC}\n" "------------------------------------------------------------------------------------------------------------------"
-grep -oP "$ID_REGEX" "$DOWNLOAD_DIR/PwnedWebsites.html" | while read -r id; do
-    metadata=$(grep -oP "(?s)$id.*?</ul>" "$DOWNLOAD_DIR/PwnedWebsites.html" | sed 's/<[^>]*>//g')
-    if [ -n "$metadata" ]; then
-        breach_date=$(echo "$metadata" | grep -oP "$BREACH_DATE_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-        date_added=$(echo "$metadata" | grep -oP "$DATE_ADDED_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-        compromised_accounts=$(echo "$metadata" | grep -oP "$COMPROMISED_ACCOUNTS_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-        compromised_data=$(echo "$metadata" | grep -oP "$COMPROMISED_DATA_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
-        printf "%-20s | %-15s | %-25s | %-25s | %-50s\n" "$id" "$breach_date" "$date_added" "$compromised_accounts" "$compromised_data"
-    fi
-done
+# Extract the IDs from the downloaded file
+if ! grep -oP "$ID_REGEX" "$DOWNLOAD_DIR/PwnedWebsites.html" > "$DOWNLOAD_DIR/ids.txt"; then
+  echo "${RED}Error extracting the IDs.${NC}" >&2
+  exit 1
+fi
+
+# Extract the metadata for each ID and save it to a file
+while read -r id; do
+  metadata=$(grep -oP "(?s)$id.*?</ul>" "$DOWNLOAD_DIR/PwnedWebsites.html" | sed 's/<[^>]*>//g')
+  if [ -n "$metadata" ]; then
+    breach_date=$(echo "$metadata" | grep -oP "$BREACH_DATE_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
+    date_added=$(echo "$metadata" | grep -oP "$DATE_ADDED_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
+    compromised_accounts=$(echo "$metadata" | grep -oP "$COMPROMISED_ACCOUNTS_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
+    compromised_data=$(echo "$metadata" | grep -oP "$COMPROMISED_DATA_REGEX" | sed 's/<[^>]*>//g' | sed 's/^\s*//;s/\s*$//')
+    printf "%s\nBreach date: %s\nDate added to HIBP: %s\nCompromised accounts: %s\nCompromised data: %s\n\n" "$id" "$breach_date" "$date_added" "$compromised_accounts" "$compromised_data" >> "$DOWNLOAD_DIR/metadata.txt"
+  fi
+done < "$DOWNLOAD_DIR/ids.txt"
+
+echo -e "${GREEN}Metadata saved to ${DOWNLOAD_DIR}/metadata.txt.${NC}"
+
