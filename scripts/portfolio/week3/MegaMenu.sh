@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Mega menu script containing links to all previous notable scripts and requires password. (password)
+
+###################################################################
+
 #!/bin/bash
 
 # Define color codes
@@ -54,7 +63,7 @@ if [ $? -eq 0 ]; then
             ;;
           2)
             blue "Option 2: You chose to copy a folder"
-            sh /workspaces/portfolio/scripts/portfolio/folderCopier.sh
+            sh /workspaces/portfolio/scripts/portfolio/week2/folderCopier.sh
             ;;
           3)
             blue "Option 3: You chose to set a password"

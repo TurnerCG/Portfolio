@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Advanced guessing game.
+
+###################################################################
+
 #!/bin/bash
 
 # Define getNumber function to prompt for a number

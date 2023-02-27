@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Script that allows/denies access based on whether the user inputs the correct/incorrect password.
+
+###################################################################
+
 #!/bin/bash 
 # Ask the user to type a secret password (Hide that input).
 # Check the user's password against the hash stored in 'secret.txt'.

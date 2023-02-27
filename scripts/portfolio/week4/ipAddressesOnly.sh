@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Outputs the IP address information of the user.
+
+###################################################################
+
 #!/bin/bash
 
 # Execute the ipInfo.sh script and capture the output

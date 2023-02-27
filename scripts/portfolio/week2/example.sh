@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Script that gets the user to input names, and a hidden password, outputting the same password.
+
+###################################################################
+
 #!/bin/bash
 # Below will request the names of those running the script. Changed to ask for 3 names.
 read -rp "hello, please enter your three names: " nameOne nameTwo nameThree

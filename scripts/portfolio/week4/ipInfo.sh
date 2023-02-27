@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Displays more IP address information of the user.
+
+###################################################################
+
 #!/bin/bash 
       
 #get info about networking from the ifconfig command 

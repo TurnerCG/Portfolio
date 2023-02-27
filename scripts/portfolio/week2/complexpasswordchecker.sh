@@ -1,5 +1,13 @@
+###################################################################
 
-       #!/bin/bash 
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Password complexity checking script.
+
+###################################################################
+
+#!/bin/bash 
       
 echo "enter the password" 
       

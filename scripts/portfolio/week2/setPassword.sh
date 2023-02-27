@@ -1,6 +1,13 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Script that sets a password and stores it in secret.txt file.
+
+###################################################################
+
 #!/bin/bash
-
-
 
 # Ask the user to type a folder name
 read -rp " Please input a name for the file storing the hashed password " folderName

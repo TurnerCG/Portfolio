@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Function defining support script
+
+###################################################################
+
 #!/bin/bash
 
 # Script meant to be called by other scripts to define functions 

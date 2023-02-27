@@ -1,5 +1,14 @@
+###################################################################
 
-       #!/bin/bash 
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Simple number guessing game.
+
+###################################################################
+
+
+#!/bin/bash 
       
  
       

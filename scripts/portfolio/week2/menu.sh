@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Simple menu that points to other scripts.
+
+###################################################################
+
 #!/bin/bash
 
 # Define color codes

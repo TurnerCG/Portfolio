@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Script that downloads the contents of a website.
+
+###################################################################
+
 #!/bin/bash
 
 while true; do

@@ -1,3 +1,12 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Password checking script to see if the user inputs the correct password.
+
+###################################################################
+
 #!/bin/bash
 
 #Don't tell anyone!

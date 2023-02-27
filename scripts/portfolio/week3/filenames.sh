@@ -1,46 +1,31 @@
+###################################################################
+
+# Author: Christopher Turner
+# Creation Date: 01/2023
+# Last Modified Data: 02/23
+# Script Description: Checks .txt file contents and outputs basic information on details.
+
+###################################################################
+
 #!/bin/bash
-
-# Define color codes
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-YELLOW='\033[1;33m'
-BLUE='\033[1;34m'
-NC='\033[0m'
-
-# Define functions for colored output
-function red {
-    echo -e "${RED}$1${NC}"
-}
-
-function green {
-    echo -e "${GREEN}$1${NC}"
-}
-
-function yellow {
-    echo -e "${YELLOW}$1${NC}"
-}
-
-function blue {
-    echo -e "${BLUE}$1${NC}"
-}
 
 filename="/workspaces/portfolio/scripts/portfolio/week3/filenames.txt"
 
 # Check if the file exists before trying to read it
-if [ -f $filename ]; then
+if [ -f "$filename" ]; then
   # Reads each line of the file
   while read line; do
     # Checks if the line is a file or directory
     if [ -z "$line" ]; then
-      yellow "Blank line"
-    elif [[ -f $line ]]; then
-      green "That file exists"
-    elif [[ -d $line ]]; then
-      blue "That's a directory"
+      echo "\033[1;33mBlank line\033[0m"
+    elif [ -f "$line" ]; then
+      echo "\033[0;32mThat file exists\033[0m"
+    elif [ -d "$line" ]; then
+      echo "\033[1;34mThat's a directory\033[0m"
     else
-      red "I don't know what that is!"
+      echo "\033[0;31mI don't know what that is!\033[0m"
     fi
-  done < $filename
+  done < "$filename"
 else
   echo "The file $filename does not exist."
 fi
